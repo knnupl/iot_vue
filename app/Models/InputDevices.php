@@ -11,6 +11,6 @@ class InputDevices extends Model
     protected $fillable =[
         'name',
         'value',
-        
-    ]
+
+    ];
 }

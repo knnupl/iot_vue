@@ -12,5 +12,5 @@ class OutputDevices extends Model
         'name',
         'is_active',
         
-    ]
+    ];
 }
