@@ -2,16 +2,15 @@ name: Laravel
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
 
   build:
 
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -19,10 +18,9 @@ jobs:
         run: npm install
       - name: Compile assets for production
         run: npm run production
+        
   laravel-tests:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Copy .env
@@ -45,11 +43,8 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: php artisan test
 
-
-
   deploy:
-    runs-on: ubuntu-latest
-  
+    runs-on: ubuntu-latest  
     steps:
       - name: Checkout
         uses: actions/checkout@v2
