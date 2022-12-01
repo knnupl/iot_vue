@@ -15,11 +15,11 @@ jobs:
     
     - name: Checkout
 
-      uses: actions/folk7@knnupl
+      uses: git@github.com:knnupl/iot_vue.git
 
     - name: Deployment
 
-      uses: appleboy/ssh-action@main
+      uses: git@github.com:knnupl/iot_vue.git
 
       with:
 
