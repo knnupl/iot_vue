@@ -15,11 +15,11 @@ jobs:
     
     - name: Checkout
 
-      uses: git@github.com:knnupl/iot_vue.git
+      uses: git@github.com:knnupl
 
     - name: Deployment
 
-      uses: git@github.com:knnupl/iot_vue.git
+      uses: git@github.com:knnupl
 
       with:
 
