@@ -15,12 +15,12 @@ jobs:
     
     - name: Checkout
 
-      uses: git@github.com:knnupl
+      uses: actions/checkout@v2
 
     - name: Deployment
 
-      uses: git@github.com:knnupl
-
+      uses: knnupl/iot_vue@main
+      
       with:
 
         host: ${{ secrets.SSH_HOST }}
