@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class InputDevices extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'device',
+    protected $fillable =[
+        'name',
         'value',
-     
-    ];
+        
+    ]
 }

@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class OutputDevices extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'device',
+    protected $fillable =[
+        'name',
         'is_active',
-     
-    ];
+        
+    ]
 }
