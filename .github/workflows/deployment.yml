@@ -1,0 +1,30 @@
+name: Build and Deploy
+on:
+    push:
+        branches:
+            -   master
+
+jobs:
+    build:
+        name: Build and Deploy
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+                with:
+                    php-version: '8.1.12'
+            -   uses: actions/checkout@v3
+         
+            -   name: Speed up the packages installation process
+                run: composer global require hirak/prestissimo
+            -   name: Install Packages
+                run: composer install --no-dev
+            -   name: Deploy to Server
+                uses: knnupl/iot-vue@main
+                with:
+                    host: ${{ secrets.SSH_HOST }}
+                    key: ${{ secrets.SSH_PRIVATE_KEY }}
+                    username: ${{ secrets.SSH_USERNAME }}
+                    script: |
+                    cd /var/www/html/
+                    git checkout -f 
+                    git pull
